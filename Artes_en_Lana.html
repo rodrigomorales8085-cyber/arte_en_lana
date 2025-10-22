@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+        <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Arte en Lana</title>
+        <link rel="stylesheet" href="arte_en_lana.css">
+        <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: none;
+        }
+        nav a {
+            position: relative;
+            transition: color 0.3s;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg,#60A5FA,#1E3A8A);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        nav a:hover::after {
+            transform: scaleX(1);
+        }
+        button, .comprarBtn, #verProductosBtn, #enviarWhatsappCarrito {
+            transition: box-shadow 0.3s, transform 0.2s;
+        }
+        button:hover, .comprarBtn:hover, #verProductosBtn:hover, #enviarWhatsappCarrito:hover {
+            box-shadow: 0 4px 16px rgba(96,165,250,0.18);
+            transform: translateY(-2px) scale(1.04);
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo">Arte en<span> Lana</span></div>
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Flores</a>
+                <a href="#amigurumis">Amigurumis</a>
+                <a href="#llaveros">Llaveros</a>
+                <a href="#ofertas">Ofertas</a>
+            </nav>
+            <div class="carrito">
+                <button id="carritoBtn">🛒 Carrito (<span id="carritoContador">0</span>)</button>
+            </div>
+        </header>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Tu estilo,nuestra pasion</h1>
+                <p>descubre productos artesanales tejidos al mejor precio.</p>
+                <button id="verProductosBtn">Ver productos</button>
+            </div>
+        </section>
+
+        <section class="productos" id="productos">
+            <h2>Flores</h2>
+            <button class="ir-inicio" style="margin-bottom:1.5rem;background:#60A5FA;color:#fff;padding:0.5rem 1.2rem;border-radius:20px;font-weight:bold;cursor:pointer;">Ir al inicio</button>
+            <div class="grid">
+                <div class="card">
+                    <img src="imgenes/flores amarillas.jpg" alt="Flor 1">
+                    <h3>Flores Amarillas</h3>
+                    <p>60 Bs</p>
+                    <button class="comprarBtn" data-nombre="Flor Amarilla" data-precio="60">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="imgenes/flores blancas.jpg" alt="Flor 2">
+                    <h3>Flores Rosas</h3>
+                    <p>75 Bs</p>
+                    <button class="comprarBtn" data-nombre="Flor Rosa" data-precio="75">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="imgenes/flores azules.jpg" alt="Flor 3">
+                    <h3>Flores Azules</h3>
+                    <p>80 Bs</p>
+                    <button class="comprarBtn" data-nombre="Flor Azul" data-precio="80">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="imgenes/flores blancas.jpg" alt="Flor 4">
+                    <h3>Flores Blancas</h3>
+                    <p>150 Bs</p>
+                    <button class="comprarBtn" data-nombre="Flor Blanca" data-precio="150">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="imgenes/girasoles.jpg" alt="girasoles">
+                    <h3>girasoles</h3>
+                    <p>55 Bs</p>
+                    <button class="comprarBtn" data-nombre="girasoles" data-precio="55">Comprar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="productos" id="amigurumis">
+            <h2>Amigurumis</h2>
+            <button class="ir-inicio" style="margin-bottom:1.5rem;background:#60A5FA;color:#fff;padding:0.5rem 1.2rem;border-radius:20px;font-weight:bold;cursor:pointer;">Ir al inicio</button>
+            <div class="grid">
+                <div class="card">
+                    <img src="imgenes/ballenita.jpg" alt="Amigurumi 1">
+                    <h3>ballenita</h3>
+                    <p>25 Bs</p>
+                    <button class="comprarBtn" data-nombre="ballenita" data-precio="20">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="imgenes/collar de cerezas para gatito (1).jpg" alt="Amigurumi 2">
+                    <h3>collar de cerezas para Gatitos</h3>
+                    <p>30 Bs</p>
+                    <button class="comprarBtn" data-nombre="collar de cerezas para Gatitos" data-precio="30">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="imgenes/collar de flores para gatito.jpg" alt="Amigurumi 3">
+                    <h3>collar de flores para Gatitos</h3>
+                    <p>30 Bs</p>
+                    <button class="comprarBtn" data-nombre="collar de flores para Gatitos" data-precio="30">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="imgenes/medusita celeste.jpg" alt="Amigurumi 4">
+                    <h3>medusita celeste</h3>
+                    <p>20 Bs</p>
+                    <button class="comprarBtn" data-nombre="medusita celeste" data-precio="20">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="imgenes/medusita rosa.jpg" alt="Amigurumi 5">
+                    <h3>medusita rosa</h3>
+                    <p>20 Bs</p>
+                    <button class="comprarBtn" data-nombre="medusita rosa" data-precio="20">Comprar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="productos" id="llaveros">
+            <h2>Llaveros</h2>
+            <button class="ir-inicio" style="margin-bottom:1.5rem;background:#60A5FA;color:#fff;padding:0.5rem 1.2rem;border-radius:20px;font-weight:bold;cursor:pointer;">Ir al inicio</button>
+            <div class="grid">
+                <div class="card">
+                    <img src="imgenes/llavero gato negro y blanco.jpg" alt="Llavero 1">
+                    <h3>Llavero Gatitos</h3>
+                    <p>35 Bs</p>
+                    <button class="comprarBtn" data-nombre="Llavero Gatitos" data-precio="35">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="imgenes/llavero luna y estrella.jpg" alt="Llavero 2">
+                    <h3>Llavero Luna y Estrella</h3>
+                    <p>30 Bs</p>
+                    <button class="comprarBtn" data-nombre="Llavero Luna y Estrella" data-precio="30">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="imgenes/Llavero estrellita.jpg" alt="Llavero 3">
+                    <h3>Llavero estrellita</h3>
+                    <p>15 Bs</p>
+                    <button class="comprarBtn" data-nombre="Llavero estrellita" data-precio="15">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="imgenes/Llavero tulipan llavero.jpg" alt="Llavero 4">
+                    <h3>Llavero Tulipán</h3>
+                    <p>15 Bs</p>
+                    <button class="comprarBtn" data-nombre="Llavero tulipan" data-precio="15">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="imgenes/Furia nocturna y Furia luminosa a crochet ✨.jpg" alt="Llavero 5">
+                    <h3>Llavero furia y Chimuelo</h3>
+                    <p>35 Bs</p>
+                    <button class="comprarBtn" data-nombre="Llavero furia y Chimuelo" data-precio="35">Comprar</button>
+                </div>
+            </div>
+        </section>
+
+    <!-- Carrito Modal -->
+        <!-- Sección de ofertas -->
+        <section id="ofertas" class="productos">
+            <h2>Ofertas especiales</h2>
+            <button class="ir-inicio" style="margin-bottom:1rem;background:#60A5FA;color:#fff;padding:0.4rem 1rem;border-radius:16px;font-weight:bold;cursor:pointer;">Ir al inicio</button>
+            <div class="grid">
+                <div class="card">
+                    <img src="imgenes/maceta tulipan (1).jpg" alt="maceta tulipan rojo">
+                    <h3>maceta tulipan rojo</h3>
+                    <p><span style="color:#EF4444;font-weight:bold;">Oferta: 30 Bs</span> <span style="text-decoration:line-through;color:#6B7280;">40 Bs</span></p>
+                    <button class="comprarBtn" data-nombre="maceta tulipan rojo" data-precio="30">Comprar</button>
+                </div>
+                <div class="card">
+                    <img src="imgenes/ramo de Van Gogh.jpg" alt="mini peluche crochet">
+                    <h3>mini ramo de Van Gogh</h3>
+                    <p><span style="color:#EF4444;font-weight:bold;">Oferta: 35 Bs</span> <span style="text-decoration:line-through;color:#6B7280;">40 Bs</span></p>
+                    <button class="comprarBtn" data-nombre="mini ramo de Van Gogh" data-precio="35">Comprar</button>
+                </div>
+            </div>
+        </section>
+        <div id="carritoModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close" id="cerrarCarrito">&times;</span>
+                <h2>Carrito de compras</h2>
+                <ul id="carritoLista"></ul>
+                <p>Total: <span id="carritoTotal">0</span> Bs</p>
+                <button id="enviarWhatsappCarrito" style="background:#25D366;color:white;padding:0.7rem 1.5rem;border-radius:20px;font-weight:bold;margin-top:1rem;cursor:pointer;">Comprar por WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- Secciones de contacto y comentarios eliminadas por solicitud del usuario -->
+
+        <footer>
+            <p>&copy;2025 Arte en Lana - Todos los derechos reservados</p>
+        </footer>
+
+        <script>
+        // Sección de comentarios eliminada; código JavaScript relacionado removido.
+        // Scroll suave al inicio con el botón 'Ir al inicio'
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.ir-inicio').forEach(btn => {
+                btn.onclick = function() {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                };
+            });
+        });
+        // Animación elegante para las tarjetas y secciones
+        function revealOnScroll() {
+            const faders = document.querySelectorAll('.fade-in');
+            const triggerBottom = window.innerHeight * 0.9;
+            faders.forEach(el => {
+                const boxTop = el.getBoundingClientRect().top;
+                if (boxTop < triggerBottom) {
+                    el.classList.add('visible');
+                } else {
+                    el.classList.remove('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('DOMContentLoaded', revealOnScroll);
+
+        // Agregar clase fade-in a secciones y tarjetas
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('section.productos, .card').forEach(el => {
+                el.classList.add('fade-in');
+            });
+            revealOnScroll();
+        });
+        // Botón ver productos
+        document.getElementById('verProductosBtn').onclick = function() {
+            document.getElementById('productos').scrollIntoView({behavior: 'smooth'});
+        };
+
+        // Carrito de compras funcional
+        let carrito = [];
+        const carritoBtn = document.getElementById('carritoBtn');
+        const carritoModal = document.getElementById('carritoModal');
+        const cerrarCarrito = document.getElementById('cerrarCarrito');
+        const carritoLista = document.getElementById('carritoLista');
+        const carritoContador = document.getElementById('carritoContador');
+        const carritoTotal = document.getElementById('carritoTotal');
+        const enviarWhatsappCarrito = document.getElementById('enviarWhatsappCarrito');
+
+        function actualizarCarrito() {
+            carritoContador.textContent = carrito.length;
+        }
+
+        function mostrarCarrito() {
+            carritoLista.innerHTML = '';
+            let total = 0;
+            carrito.forEach((item, idx) => {
+                const li = document.createElement('li');
+                li.textContent = item.nombre + ' - ' + item.precio + ' Bs';
+                // Botón para eliminar producto
+                const btnEliminar = document.createElement('button');
+                btnEliminar.textContent = 'Eliminar';
+                btnEliminar.style.marginLeft = '1rem';
+                btnEliminar.style.background = '#EF4444';
+                btnEliminar.style.color = 'white';
+                btnEliminar.style.border = 'none';
+                btnEliminar.style.borderRadius = '10px';
+                btnEliminar.style.padding = '0.2rem 0.7rem';
+                btnEliminar.style.cursor = 'pointer';
+                btnEliminar.onclick = function() {
+                    carrito.splice(idx, 1);
+                    actualizarCarrito();
+                    mostrarCarrito();
+                };
+                li.appendChild(btnEliminar);
+                carritoLista.appendChild(li);
+                total += item.precio;
+            });
+            carritoTotal.textContent = total;
+        }
+
+        document.querySelectorAll('.comprarBtn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const nombre = this.getAttribute('data-nombre');
+                const precio = parseFloat(this.getAttribute('data-precio'));
+                carrito.push({nombre, precio});
+                actualizarCarrito();
+            });
+        });
+
+        carritoBtn.onclick = function() {
+            carritoModal.style.display = 'block';
+            mostrarCarrito();
+        };
+        cerrarCarrito.onclick = function() {
+            carritoModal.style.display = 'none';
+        };
+
+        // Botón para enviar mensaje por WhatsApp con productos del carrito
+        enviarWhatsappCarrito.onclick = function() {
+            if (carrito.length === 0) {
+                alert('El carrito está vacío.');
+                return;
+            }
+            let mensaje = '¡Hola! Quiero comprar estos productos:%0A';
+            carrito.forEach(item => {
+                mensaje += '- ' + item.nombre + ' (' + item.precio + ' Bs)%0A';
+            });
+            mensaje += 'Total: ' + carrito.reduce((acc, item) => acc + item.precio, 0) + ' Bs';
+            window.open('https://wa.me/59173674555?text=' + mensaje, '_blank');
+        };
+
+        // Sección de contacto eliminada; código JavaScript relacionado removido.
+        </script>
+    </body>
+</html>
